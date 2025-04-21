@@ -37,7 +37,7 @@ This research project proposes a spatiotemporal analysis of solar energy data fo
 
 ## Progress Tracking
 
-### [Date] - Project Initiation
+### [4/20] - Project Initiation
 - Created project repository
 - Defined research objectives and methodology
 - Set up initial project structure
