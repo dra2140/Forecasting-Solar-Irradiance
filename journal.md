@@ -43,7 +43,11 @@ This research project proposes a spatiotemporal analysis of solar energy data fo
 - Set up initial project structure
 
 ### [4/21] - Data Collection and Initial Setup
-- Downloaded NSRDB data for California cities (LA, Sacramento, Redding, Fresno)
+- Downloaded NSRDB data for multiple cities across four states:
+  - California: Los Angeles (LA), Sacramento (SAC), Redding, Fresno
+  - Nevada: Las Vegas, Reno, Elko
+  - Texas: Houston, Dallas, San Antonio, Lubbock
+  - Arizona: Phoenix, Tucson, Flagstaff
 - Set up Python environment with required dependencies
 - Created initial project structure with preprocessing and model scripts
 
@@ -72,9 +76,30 @@ This research project proposes a spatiotemporal analysis of solar energy data fo
 4. **Data Integration**: Needed to combine data from multiple cities while preserving city-specific patterns
    - Solution: Added city as a feature and created lag/rolling features grouped by city
 
+### [4/23] - LSTM Model Implementation
+- Implemented a Long Short-Term Memory (LSTM) neural network for solar irradiance forecasting
+- Model Architecture:
+  - Input Layer: Takes sequences of 24 hours of data
+  - First LSTM Layer: 64 units with return sequences
+  - Dropout Layer: 20% dropout for regularization
+  - Second LSTM Layer: 32 units
+  - Dropout Layer: 20% dropout
+  - Dense Layer: 16 units with ReLU activation
+  - Output Layer: Single unit for GHI prediction
+- Key Features:
+  - Sequence Creation: Converts time series data into overlapping sequences
+  - Data Normalization: StandardScaler for feature normalization
+  - Validation Split: 20% of training data for validation
+  - Early Stopping: Prevents overfitting
+  - Metrics: Mean Squared Error (MSE) and Mean Absolute Error (MAE)
+- Visualization:
+  - Training/Validation loss plots
+  - Actual vs. Predicted GHI plots
+
 ### Next Steps
 - [x] Data collection and preprocessing
-- [ ] Implementation of baseline models (on going)
+- [x] Implementation of baseline models (LSTM)
+- [ ] Implementation of additional baseline models (MLP, SVR)
 - [ ] Comparative analysis framework setup
 - [ ] Initial experiments with different time scales
 - [ ] Model training and evaluation
