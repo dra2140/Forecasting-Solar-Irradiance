@@ -42,8 +42,40 @@ This research project proposes a spatiotemporal analysis of solar energy data fo
 - Defined research objectives and methodology
 - Set up initial project structure
 
+### [4/21] - Data Collection and Initial Setup
+- Downloaded NSRDB data for California cities (LA, Sacramento, Redding, Fresno)
+- Set up Python environment with required dependencies
+- Created initial project structure with preprocessing and model scripts
+
+### [4/22] - Data Preprocessing Implementation
+- Implemented data preprocessing pipeline for NSRDB data
+- Created functions for:
+  - Loading and combining multiple CSV files
+  - Handling metadata rows in NSRDB files
+  - Creating datetime index
+  - Filtering for daytime hours (6 AM to 6 PM)
+  - Handling missing values
+  - Creating time-based features (hour and day cyclical encoding)
+  - Creating lag features and rolling means for GHI
+  - Normalizing numeric features
+
+#### Challenges Faced and Solutions:
+1. **Metadata Handling**: NSRDB files contain metadata rows that needed to be skipped
+   - Solution: Modified CSV reading to skip first 2 rows
+
+2. **Duplicate Indices**: When combining data from multiple cities, we encountered duplicate datetime indices
+   - Solution: Created a multi-index with both Date and City to ensure uniqueness
+
+3. **Time Filtering**: Had issues with time filtering due to index structure
+   - Solution: Implemented time filtering before creating the multi-index
+
+4. **Data Integration**: Needed to combine data from multiple cities while preserving city-specific patterns
+   - Solution: Added city as a feature and created lag/rolling features grouped by city
+
 ### Next Steps
-- [ ] Data collection and preprocessing
-- [ ] Implementation of baseline models
+- [x] Data collection and preprocessing
+- [ ] Implementation of baseline models (on going)
 - [ ] Comparative analysis framework setup
-- [ ] Initial experiments with different time scales 
+- [ ] Initial experiments with different time scales
+- [ ] Model training and evaluation
+- [ ] Results analysis and visualization 
