@@ -96,11 +96,18 @@ This research project proposes a spatiotemporal analysis of solar energy data fo
   - Training/Validation loss plots
   - Actual vs. Predicted GHI plots
 
-### Next Steps
-- [x] Data collection and preprocessing
-- [x] Implementation of baseline models (LSTM)
-- [ ] Implementation of additional baseline models (MLP, SVR)
-- [ ] Comparative analysis framework setup
-- [ ] Initial experiments with different time scales
-- [ ] Model training and evaluation
-- [ ] Results analysis and visualization 
+### [Today] - Model Evaluation and New Experiments
+- Evaluated and compared multiple models for solar irradiance forecasting:
+  - **Linear Regression**: Achieved MAE = 0.01, RMSE = 0.02, R² = 0.923
+  - **LSTM**: Achieved MAE = 0.01, RMSE = 0.02, R² = 0.928
+  - **ARIMA**: Achieved MAE = 0.08, RMSE = 0.10, R² = -1.774
+- Explored additional modeling options:
+  - Planned to implement SARIMA (Seasonal ARIMA) for capturing seasonality in solar data.
+  - Outlined and prepared a 1D CNN (Convolutional Neural Network) model from scratch for time series forecasting.
+- Next Steps:
+- [x] Evaluated and compared ARIMA, Linear Regression and LSTM models (with MAE, RMSE, and R²)
+- [x] Added R² as an additional evaluation metric
+- [ ] Implement SARIMA (Seasonal ARIMA) model
+- [ ] Implement 1D CNN (Convolutional Neural Network) model
+- [ ] Continue comparative analysis across all models
+- [ ] Visualize and document results for all approaches 
