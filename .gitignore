@@ -45,5 +45,4 @@ Thumbs.db
 
 # Project specific
 Solar-Energy-Forecasting-using-Deep-Learning-and-Time-Series-Models-main/
-*.csv
 !requirements.txt 
